@@ -1,181 +1,240 @@
 .iletisim {
-  height: 100vh;
   width: 100%;
-  padding: 90px 80px;
+  min-height: 100vh;
+  padding: 100px 30px 60px;
   box-sizing: border-box;
 
-  background: radial-gradient(circle at top, #1a1a1a, #050505);
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 46, 46, 0.08),
+      transparent 35%
+    ),
+    #0a0a0a;
 }
 
-/* Başlık */
-.iletisim-baslik {
-  font-size: 50px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 60px;
+/* BAŞLIK */
+
+.iletisim-ust {
+  width: 100%;
+  max-width: 760px;
   text-align: center;
+  margin-bottom: 55px;
 }
 
-.iletisim-baslik::after {
+.iletisim-etiket {
+  display: inline-block;
+  color: #ff3b3b;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.iletisim-ust h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.iletisim-ust h2::after {
   content: "";
+
   display: block;
-  width: 90px;
-  height: 4px;
-  background: #ff2e2e;
+
+  width: 55px;
+  height: 3px;
+
   margin: 15px auto 0;
-  border-radius: 10px;
+
+  background: #ff3b3b;
+  border-radius: 20px;
 }
 
-/* Container */
+.iletisim-ust p {
+  max-width: 680px;
+
+  margin: 22px auto 0;
+
+  color: #a5a5a5;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* KARTLAR */
+
 .iletisim-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
 
-  align-items: stretch; /* ÖNEMLİ */
+  gap: 20px;
 }
 
-/* ============================= */
-/*         FLIP CARD             */
-/* ============================= */
-
-.flip-card {
-  width: 100%;
-  height: 280px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  width: 100%;
-  height: 116%;
-  border-radius: 20px;
-
-  transition: transform 0.7s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Ön ve Arka */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  border-radius: 20px;
-  backface-visibility: hidden;
-
+.iletisim-kart {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  padding: 20px;
-  text-align: center;
+  gap: 20px;
+
+  padding: 25px;
+
+  color: inherit;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Ön yüz */
-.flip-card-front {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 46, 46, 0.25);
-  box-shadow: 0px 0px 25px rgba(255, 46, 46, 0.12);
+a.iletisim-kart:hover {
+  transform: translateY(-5px);
 
-  color: white;
+  border-color: rgba(255, 59, 59, 0.45);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 59, 59, 0.07);
 }
 
-.flip-card-front h3 {
-  color: #ff2e2e;
-  font-size: 24px;
-}
+.iletisim-icon {
+  width: 48px;
+  height: 48px;
 
-/* Arka yüz */
-.flip-card-back {
-  background: rgba(255, 46, 46, 0.12);
-  border: 1px solid rgba(255, 46, 46, 0.4);
+  flex-shrink: 0;
 
-  transform: rotateY(180deg);
-
-  color: white;
-}
-
-.flip-card-back p {
-  margin: 8px 0;
-}
-
-/* ============================= */
-/*            FORM               */
-/* ============================= */
-
-.iletisim-formu {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  justify-content: center;
 
-  background: rgba(255, 255, 255, 0.03);
-  padding: 30px;
-  border-radius: 20px;
+  color: #ff3b3b;
+  background: rgba(255, 59, 59, 0.08);
 
-  border: 1px solid rgba(255, 46, 46, 0.25);
+  border: 1px solid rgba(255, 59, 59, 0.22);
+  border-radius: 12px;
+
+  font-size: 17px;
+  font-weight: 700;
 }
 
-.iletisim-formu input,
-.iletisim-formu textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+.iletisim-kart h3 {
+  margin: 0 0 7px;
 
-  background: #111;
-  color: white;
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+.iletisim-kart p {
+  margin: 0;
+
+  color: #9d9d9d;
+
+  font-size: 14px;
+}
+
+/* BUTON */
+
+.iletisim-buton {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 40px;
+  padding: 13px 25px;
+
+  color: #ffffff;
+  background: #e53935;
+
+  border: 1px solid #e53935;
+  border-radius: 8px;
+
   font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.iletisim-formu textarea {
-  resize: none;
-  height: 110px;
+.iletisim-buton:hover {
+  background: #c62828;
+  transform: translateY(-2px);
 }
 
-.iletisim-formu button {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-
-  background: #ff2e2e;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-
-  cursor: pointer;
-  transition: 0.3s;
+.iletisim-buton span {
+  transition: transform 0.25s ease;
 }
 
-.iletisim-formu button:hover {
-  background: #cc0000;
+.iletisim-buton:hover span {
+  transform: translate(3px, -3px);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ALT YAZI */
+
+.iletisim-alt {
+  margin: 25px 0 0;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+/* TABLET */
+
+@media (max-width: 750px) {
   .iletisim {
-    height: auto;
-    padding: 80px 25px;
+    padding: 90px 25px 50px;
   }
 
   .iletisim-container {
     grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+  .iletisim {
+    padding: 75px 18px 40px;
   }
 
-  .flip-card {
-    height: 220px;
+  .iletisim-ust h2 {
+    font-size: 35px;
+  }
+
+  .iletisim-ust p {
+    font-size: 15px;
+  }
+
+  .iletisim-kart {
+    padding: 21px;
+  }
+
+  .iletisim-kart p {
+    overflow-wrap: anywhere;
   }
 }

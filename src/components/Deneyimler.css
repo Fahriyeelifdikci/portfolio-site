@@ -1,4 +1,4 @@
-.hakkimda {
+.deneyimler {
   width: 100%;
   min-height: 100vh;
   padding: 100px 30px;
@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   background:
     radial-gradient(
@@ -15,19 +14,19 @@
       rgba(255, 46, 46, 0.08),
       transparent 35%
     ),
-    #0d0d0d;
+    #0a0a0a;
 }
 
-/* ÜST TANITIM */
+/* BAŞLIK */
 
-.hakkimda-ust {
+.deneyimler-ust {
   width: 100%;
   max-width: 760px;
   text-align: center;
   margin-bottom: 55px;
 }
 
-.hakkimda-etiket {
+.deneyimler-etiket {
   display: inline-block;
   color: #ff3b3b;
   font-size: 13px;
@@ -36,14 +35,14 @@
   margin-bottom: 10px;
 }
 
-.hakkimda-baslik {
+.deneyimler-ust h2 {
+  margin: 0;
   color: #ffffff;
   font-size: 44px;
-  margin: 0;
   font-weight: 700;
 }
 
-.hakkimda-baslik::after {
+.deneyimler-ust h2::after {
   content: "";
   display: block;
 
@@ -56,41 +55,38 @@
   border-radius: 20px;
 }
 
-.hakkimda-aciklama {
-  color: #a5a5a5;
-
+.deneyimler-ust p {
   max-width: 720px;
-
   margin: 22px auto 0;
 
-  font-size: 16px;
+  color: #b0b0b0;
+  font-size: 17px;
   line-height: 1.8;
 }
 
+/* GRID */
 
-/* KARTLAR */
-
-.hakkimda-kutular {
+.deneyimler-grid {
   width: 100%;
   max-width: 1150px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 24px;
 }
 
-.hakkimda-kutu {
-  min-height: 360px;
+/* KART */
 
-  padding: 30px 28px;
+.deneyim-kart {
+  position: relative;
+
+  padding: 32px;
 
   background: rgba(255, 255, 255, 0.025);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-
-  text-align: center;
+  border-radius: 18px;
 
   transition:
     transform 0.3s ease,
@@ -98,8 +94,8 @@
     box-shadow 0.3s ease;
 }
 
-.hakkimda-kutu:hover {
-  transform: translateY(-7px);
+.deneyim-kart:hover {
+  transform: translateY(-6px);
 
   border-color: rgba(255, 59, 59, 0.45);
 
@@ -108,89 +104,101 @@
     0 0 25px rgba(255, 59, 59, 0.08);
 }
 
+/* KATEGORİ */
 
-/* ANİMASYON */
+.deneyim-tur {
+  display: inline-block;
 
-.animasyon-alani {
-  width: 140px;
-  height: 140px;
+  padding: 6px 11px;
+  margin-bottom: 18px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #ff5757;
+  background: rgba(255, 59, 59, 0.08);
 
-  margin: 0 auto 10px;
+  border: 1px solid rgba(255, 59, 59, 0.25);
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.animasyon-alani > div {
-  width: 100% !important;
-  height: 100% !important;
-}
+/* KURUM */
 
-
-/* KART BAŞLIKLARI */
-
-.hakkimda-kutu h3 {
+.deneyim-kart h3 {
   color: #ffffff;
 
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 650;
 
-  margin: 10px 0 15px;
+  margin: 0 0 8px;
 }
 
+/* POZİSYON */
 
-/* KART METİNLERİ */
-
-.hakkimda-kutu p {
-  color: #a8a8a8;
+.deneyim-kart h4 {
+  color: #ff4a4a;
 
   font-size: 15px;
-  line-height: 1.75;
+  font-weight: 500;
+
+  margin: 0 0 20px;
+}
+
+/* AÇIKLAMA */
+
+.deneyim-kart p {
+  color: #b0b0b0;
+
+  font-size: 15px;
+  line-height: 1.8;
 
   margin: 0;
 }
 
+/* Son kart tek kalırsa güzel ortalansın */
+
+.deneyim-kart:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 550px;
+  width: 100%;
+  justify-self: center;
+}
 
 /* TABLET */
 
-@media (max-width: 950px) {
-  .hakkimda {
+@media (max-width: 850px) {
+  .deneyimler {
     padding: 90px 25px;
   }
 
-  .hakkimda-kutular {
+  .deneyimler-grid {
     grid-template-columns: 1fr;
     max-width: 650px;
   }
 
-  .hakkimda-kutu {
-    min-height: auto;
+  .deneyim-kart:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
   }
 }
-
 
 /* TELEFON */
 
 @media (max-width: 600px) {
-  .hakkimda {
+  .deneyimler {
     padding: 75px 18px;
   }
 
-  .hakkimda-baslik {
+  .deneyimler-ust h2 {
     font-size: 35px;
   }
 
-  .hakkimda-aciklama {
+  .deneyimler-ust p {
     font-size: 15px;
   }
 
-  .hakkimda-kutu {
-    padding: 25px 20px;
-  }
-
-  .animasyon-alani {
-    width: 120px;
-    height: 120px;
+  .deneyim-kart {
+    padding: 25px 21px;
   }
 }

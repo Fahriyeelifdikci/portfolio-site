@@ -1,169 +1,555 @@
-/* Ana Menü Genel Alan */
+/* =========================
+   ANA SAYFA / HERO
+========================= */
+
 .ana-menu {
   position: relative;
-  padding-top: 90px;
-  min-height: 100vh;
+
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
+
+  box-sizing: border-box;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  /* PREMIUM DARK BACKGROUND */
-  background: radial-gradient(circle at top, #1a1a1a, #050505);
+  padding: 70px 30px 100px;
 
-  padding: 0 80px;
-  box-sizing: border-box;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 46, 46, 0.09),
+      transparent 35%
+    ),
+    #080808;
+
+  overflow: hidden;
 }
 
-/* Yazı + Fotoğraf Kapsayıcı */
+/* ANA İÇERİK */
+
 .kapsayici-alan {
   width: 100%;
   max-width: 1100px;
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
 
-  gap: 60px;
+  gap: 70px;
 }
 
-/* Sol Yazı Alanı */
+/* =========================
+   YAZI ALANI
+========================= */
+
 .yazi-alani {
-  flex: 1;
+  min-width: 0;
 }
 
-/* Hoşgeldiniz Yazısı */
-.hosgeldiniz-yazi {
-  font-size: 40px;
-  color: #888;
-  margin-bottom: 20px;
+.kucuk-baslik {
+  margin: 0 0 12px;
+
+  color: #ff3b3b;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* İsim Başlık */
-.isim-baslik {
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.anim-isim {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1.08;
+  font-weight: 750;
+
+  letter-spacing: -1.5px;
 }
 
-/* İsim Kırmızı */
-.isim-renkli {
-  color: #ff2e2e;
-}
-
-/* Alt Başlık */
 .alt-baslik {
-  font-size: 22px;
-  color: #aaa;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  margin: 18px 0 0;
+
+  color: #b8b8b8;
+
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
-/* Buton */
-.iletisim-buton {
-  display: inline-block;
-  padding: 12px 28px;
+.aciklama {
+  max-width: 600px;
 
-  background: #ff2e2e;
-  color: white;
+  margin: 24px 0 0;
 
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
+  color: #9f9f9f;
 
-  transition: 0.3s;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-.iletisim-buton:hover {
-  background: #cc0000;
-}
+/* =========================
+   BUTONLAR
+========================= */
 
-/* Sosyal İkonlar */
-.ikonlar {
-  margin-top: 25px;
+.hero-butonlar {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.ana-buton,
+.ikincil-buton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.ana-buton {
+  color: #ffffff;
+
+  background: #e53935;
+
+  border: 1px solid #e53935;
+}
+
+.ana-buton:hover {
+  background: #c62828;
+  border-color: #c62828;
+
+  transform: translateY(-2px);
+}
+
+.ikincil-buton {
+  color: #ffffff;
+
+  background: transparent;
+
+  border: 1px solid #555555;
+}
+
+.ikincil-buton:hover {
+  color: #ff4a4a;
+
+  border-color: #ff4a4a;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SOSYAL İKONLAR
+========================= */
+
+.ikonlar {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 25px;
 }
 
 .ikonlar a {
-  color: white;
-  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e8e8e8;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .ikonlar a:hover {
-  color: #ff2e2e;
+  color: #ff3b3b;
+
+  transform: translateY(-2px);
 }
 
-/* Sağ Fotoğraf Alanı */
+/* =========================
+   FOTOĞRAF
+========================= */
+
 .resim-alani {
-  flex: 1;
+  width: 100%;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Fotoğraf Kare */
 .resim-alani img {
-  width: 320px;
-  height: 320px;
+  display: block;
 
-  border-radius: 20px;
+  width: min(100%, 380px);
+  aspect-ratio: 1 / 1;
+
   object-fit: cover;
+  object-position: center;
 
-  /* KIRMIZI GLOW */
-  box-shadow: 0px 0px 35px rgba(255, 46, 46, 0.35);
+  border-radius: 24px;
 
-  transition: 0.4s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 46, 46, 0.15);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-/* Hover ile hafif zoom efekti */
 .resim-alani img:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(255, 46, 46, 0.22);
 }
 
-/* Aşağı Kaydır Uyarısı */
+/* =========================
+   AŞAĞI KAYDIR
+========================= */
+
 .asagi-kaydir-uyari {
   position: absolute;
-  bottom: 30px;
+
   left: 50%;
+  bottom: 24px;
+
   transform: translateX(-50%);
 
   text-align: center;
-  font-size: 14px;
-  color: white;
-  opacity: 0.8;
+
+  color: #888888;
 }
 
-/* Ok */
-.asagi-ok {
-  margin: 10px auto 0;
-  width: 25px;
-  height: 25px;
+.asagi-kaydir-uyari p {
+  margin: 0;
 
-  border-left: 4px solid #ff2e2e;
-  border-bottom: 4px solid #ff2e2e;
+  font-size: 12px;
+}
+
+.asagi-ok {
+  width: 18px;
+  height: 18px;
+
+  margin: 8px auto 0;
+
+  border-left: 2px solid #ff3b3b;
+  border-bottom: 2px solid #ff3b3b;
 
   transform: rotate(-45deg);
-  animation: okHareket 1.2s infinite;
+
+  animation: okHareket 1.3s infinite;
 }
 
-/* OK ANİMASYONU */
 @keyframes okHareket {
-  0% {
+  0%,
+  100% {
     transform: rotate(-45deg) translate(0, 0);
     opacity: 1;
   }
 
   50% {
-    transform: rotate(-45deg) translate(-5px, 5px);
-    opacity: 0.5;
+    transform: rotate(-45deg) translate(-4px, 4px);
+    opacity: 0.45;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .ana-menu {
+    min-height: auto;
+
+    padding: 75px 25px 80px;
   }
 
-  100% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 1;
+  .kapsayici-alan {
+    grid-template-columns: 1fr;
+
+    max-width: 680px;
+
+    gap: 50px;
+  }
+
+  .yazi-alani {
+    text-align: center;
+  }
+
+  .aciklama {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-butonlar {
+    justify-content: center;
+  }
+
+  .ikonlar {
+    justify-content: center;
+  }
+
+  .resim-alani img {
+    width: min(100%, 360px);
+  }
+
+  .asagi-kaydir-uyari {
+    position: static;
+
+    transform: none;
+
+    margin-top: 50px;
+  }
+}
+
+/* =========================
+   TELEFON
+========================= */
+
+@media (max-width: 600px) {
+  .ana-menu {
+    padding: 55px 20px 55px;
+  }
+
+  .kapsayici-alan {
+    width: 100%;
+
+    gap: 38px;
+  }
+
+  .kucuk-baslik {
+    margin-bottom: 10px;
+
+    font-size: 11px;
+    letter-spacing: 1.7px;
+  }
+
+  .anim-isim {
+    font-size: 36px;
+    line-height: 1.12;
+
+    letter-spacing: -0.7px;
+  }
+
+  .alt-baslik {
+    margin-top: 14px;
+
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .aciklama {
+    margin-top: 20px;
+
+    max-width: 340px;
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-butonlar {
+    width: 100%;
+
+    margin-top: 26px;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 11px;
+  }
+
+  .ana-buton,
+  .ikincil-buton {
+    width: 100%;
+    max-width: 280px;
+
+    min-height: 45px;
+  }
+
+  .ikonlar {
+    margin-top: 22px;
+  }
+
+  .ikonlar svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .resim-alani img {
+    width: min(100%, 300px);
+
+    border-radius: 20px;
+  }
+
+  .asagi-kaydir-uyari {
+    margin-top: 38px;
+  }
+}
+
+/* =========================
+   ÇOK KÜÇÜK TELEFON
+========================= */
+
+@media (max-width: 380px) {
+  .ana-menu {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .anim-isim {
+    font-size: 32px;
+  }
+
+  .alt-baslik {
+    font-size: 18px;
+  }
+
+  .aciklama {
+    font-size: 13.5px;
+  }
+
+  .resim-alani img {
+    width: min(100%, 275px);
+  }
+}
+/* =========================
+   MOBİL TAM ORTALAMA
+========================= */
+
+@media screen and (max-width: 600px) {
+  .ana-menu {
+    width: 100%;
+    padding: 50px 20px 55px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kapsayici-alan {
+    width: 100%;
+    max-width: 375px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
+  }
+
+  .yazi-alani {
+    width: 100%;
+    max-width: 340px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .kucuk-baslik,
+  .anim-isim,
+  .alt-baslik,
+  .aciklama {
+    width: 100%;
+    text-align: center;
+  }
+
+  .aciklama {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-butonlar {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ana-buton,
+  .ikincil-buton {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .ikonlar {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resim-alani {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+  }
+
+  .resim-alani img {
+    width: 100%;
+    max-width: 280px;
+
+    margin: 0 auto;
+  }
+
+  .asagi-kaydir-uyari {
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
   }
 }

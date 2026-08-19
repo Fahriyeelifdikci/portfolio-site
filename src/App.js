@@ -6,6 +6,7 @@ import Hakkimda from "./components/Hakkimda";
 import Yetenekler from "./components/Yetenekler";
 import Projeler from "./components/Projeler";
 import Iletisim from "./components/Iletisim";
+import Deneyimler from "./components/Deneyimler";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Menu />
       <AnaMenu />
       <Hakkimda />
+      <Deneyimler />
       <Yetenekler />
       <Projeler />
       <Iletisim />

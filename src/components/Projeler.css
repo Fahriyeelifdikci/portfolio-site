@@ -1,0 +1,272 @@
+.projeler {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 46, 46, 0.08),
+      transparent 35%
+    ),
+    #0d0d0d;
+}
+
+/* BAŞLIK */
+
+.projeler-ust {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.projeler-etiket {
+  display: inline-block;
+
+  color: #ff3b3b;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.projeler-ust h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.projeler-ust h2::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  margin: 15px auto 0;
+
+  background: #ff3b3b;
+  border-radius: 20px;
+}
+
+.projeler-ust p {
+  max-width: 720px;
+
+  margin: 22px auto 0;
+
+  color: #a5a5a5;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* PROJE GRID */
+
+.projeler-grid {
+  width: 100%;
+  max-width: 1150px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+/* Tek proje varsa genişliği abartmasın */
+
+.proje-kart:only-child {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  max-width: 720px;
+
+  justify-self: center;
+}
+
+/* PROJE KARTI */
+
+.proje-kart {
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.proje-kart:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 59, 59, 0.45);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(255, 59, 59, 0.08);
+}
+
+/* KART ÜST */
+
+.proje-kart-ust {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.proje-numara {
+  color: #555;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.proje-durum {
+  padding: 6px 11px;
+
+  color: #ff5757;
+  background: rgba(255, 59, 59, 0.08);
+
+  border: 1px solid rgba(255, 59, 59, 0.25);
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* İÇERİK */
+
+.proje-kart h3 {
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 650;
+}
+
+.proje-kart > p {
+  margin: 0;
+
+  color: #a8a8a8;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* TEKNOLOJİLER */
+
+.proje-teknolojiler {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 25px;
+}
+
+.proje-teknolojiler span {
+  padding: 7px 11px;
+
+  color: #d5d5d5;
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+
+  font-size: 13px;
+}
+
+/* GITHUB */
+
+.proje-linkler {
+  margin-top: 30px;
+}
+
+.proje-linkler a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.proje-linkler a span {
+  color: #ff3b3b;
+
+  transition: transform 0.25s ease;
+}
+
+.proje-linkler a:hover {
+  color: #ff4a4a;
+}
+
+.proje-linkler a:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .projeler {
+    padding: 90px 25px;
+  }
+
+  .projeler-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+
+  .proje-kart:only-child {
+    grid-column: auto;
+  }
+}
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+  .projeler {
+    padding: 75px 18px;
+  }
+
+  .projeler-ust h2 {
+    font-size: 35px;
+  }
+
+  .projeler-ust p {
+    font-size: 15px;
+  }
+
+  .proje-kart {
+    padding: 25px 21px;
+  }
+
+  .proje-kart h3 {
+    font-size: 21px;
+  }
+}

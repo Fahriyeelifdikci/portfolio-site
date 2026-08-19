@@ -1,0 +1,213 @@
+.yetenekler {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 46, 46, 0.08),
+      transparent 35%
+    ),
+    #0d0d0d;
+}
+
+/* ÜST BAŞLIK ALANI */
+
+.yetenekler-ust {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.yetenekler-etiket {
+  display: inline-block;
+  color: #ff3b3b;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.yetenekler-ust h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.yetenekler-ust h2::after {
+  content: "";
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  margin: 15px auto 0;
+
+  background: #ff3b3b;
+  border-radius: 20px;
+}
+
+.yetenekler-ust p {
+  max-width: 720px;
+  margin: 22px auto 0;
+
+  color: #a5a5a5;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* KART GRID */
+
+.yetenekler-grid {
+  width: 100%;
+  max-width: 1150px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* TEK KART */
+
+.yetenek-kategori {
+  min-height: 210px;
+  padding: 28px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.yetenek-kategori:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 59, 59, 0.45);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(255, 59, 59, 0.08);
+}
+
+
+/* KART BAŞLIĞI */
+
+.yetenek-kategori h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+
+  margin: 0 0 22px;
+}
+
+
+/* ETİKETLER */
+
+.yetenek-listesi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.yetenek-listesi span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 13px;
+
+  color: #d8d8d8;
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.yetenek-listesi span:hover {
+  color: #ffffff;
+
+  background: rgba(255, 59, 59, 0.12);
+
+  border-color: rgba(255, 59, 59, 0.55);
+
+  transform: translateY(-2px);
+}
+
+
+/* SON KART BİRAZ FARKLI OLSUN */
+
+.yetenek-kategori:last-child {
+  border-color: rgba(255, 59, 59, 0.2);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 59, 59, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .yetenekler {
+    padding: 90px 25px;
+  }
+
+  .yetenekler-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 750px;
+  }
+}
+
+
+/* TELEFON */
+
+@media (max-width: 650px) {
+  .yetenekler {
+    padding: 75px 18px;
+  }
+
+  .yetenekler-ust h2 {
+    font-size: 35px;
+  }
+
+  .yetenekler-ust p {
+    font-size: 15px;
+  }
+
+  .yetenekler-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yetenek-kategori {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+}

@@ -1,100 +1,74 @@
 import "./AnaMenu.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import profil from "../img/profil.jpeg";
-import { FaGithub, FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
+import { FaGithub, FaEnvelope } from "react-icons/fa6";
 
 function AnaMenu() {
-  const isim = "Fahriye Elif Dikci";
-  const mesaj = "Hoş Geldiniz";
-
-  const [gosterilenMesaj, setGosterilenMesaj] = useState("");
-  const [gosterilenIsim, setGosterilenIsim] = useState("");
-
-  useEffect(() => {
-    let mesajIndex = 0;
-    const mesajInterval = setInterval(() => {
-      setGosterilenMesaj(mesaj.slice(0, mesajIndex + 1));
-      mesajIndex++;
-      if (mesajIndex === mesaj.length) clearInterval(mesajInterval);
-    }, 100);
-
-    let isimIndex = 0;
-    setTimeout(() => {
-      const isimInterval = setInterval(() => {
-        setGosterilenIsim(isim.slice(0, isimIndex + 1));
-        isimIndex++;
-        if (isimIndex === isim.length) clearInterval(isimInterval);
-      }, 150);
-    }, mesaj.length * 100 + 300);
-
-    return () => clearInterval(mesajInterval);
-  }, []);
-
   return (
-    <>
+    <section className="ana-menu" id="anasayfa">
+      <div className="kapsayici-alan">
 
-      <section className="ana-menu" id="anasayfa">
-        {/* ESKİ PORTFOLYO GİBİ KAPSAYICI */}
-        <div className="kapsayici-alan">
+        <div className="yazi-alani">
+        <p className="kucuk-baslik">Merhaba, ben</p>
 
-          {/* SOL YAZILAR */}
-          <div className="yazi-alani">
-            <div className="hosgeldiniz-yazi">{gosterilenMesaj}</div>
+          <h1 className="anim-isim">
+            Fahriye Elif Dikci
+          </h1>
 
-            <h1 className="anim-isim">
-              <span className="isim-renkli">{gosterilenIsim}</span>
-            </h1>
+          <h2 className="alt-baslik">
+            Bilgisayar Mühendisliği Öğrencisi
+          </h2>
 
-            <p className="alt-baslik">
-              Bilgisayar Mühendisliği <br /> Portföyüm
-            </p>
+          <p className="aciklama">
+            Backend geliştirme, full-stack geliştirme ve yazılım mühendisliği
+            alanlarıyla ilgileniyorum. Projeleri sıfırdan geliştirmeyi,
+            karşılaştığım problemleri çözmeyi ve gerçek uygulamalar
+            geliştirerek kendimi ilerletmeyi seviyorum.
+          </p>
 
-            <a href="#iletisim" className="iletisim-buton">
-              İletişime Geç
+          <div className="hero-butonlar">
+            <a href="#projeler" className="ana-buton">
+              Projelerimi Gör
             </a>
 
-            {/* SOSYAL MEDYA */}
-            <div className="ikonlar">
-              <a href="https://github.com/Fahriyeelifdikci" target="_blank" rel="noreferrer">
-                <FaGithub size={28} />
-              </a>
-
-              <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-                <FaXTwitter size={28} />
-              </a>
-
-              <a href="https://instagram.com/" target="_blank" rel="noreferrer">
-                <FaInstagram size={28} />
-              </a>
-
-              <a href="https://facebook.com/" target="_blank" rel="noreferrer">
-                <FaFacebook size={28} />
-              </a>
-            </div>
+            <a href="#iletisim" className="ikincil-buton">
+              İletişime Geç
+            </a>
           </div>
 
-          {/* SAĞ FOTOĞRAF */}
-          <div className="resim-alani">
-            <img
-              src={profil}
-              alt="Profil Fotoğrafı"
-              style={{
-                width: "320px",
-                height: "450px",
-                borderRadius: "20px",
-                objectFit: "cover"
-              }}
-            />
+          <div className="ikonlar">
+            <a
+              href="https://github.com/Fahriyeelifdikci"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub size={28} />
+            </a>
+
+            <a
+              href="mailto:elifdikci52@gmail.com"
+              aria-label="Email"
+            >
+              <FaEnvelope size={28} />
+            </a>
           </div>
         </div>
 
-        {/* AŞAĞI KAYDIR */}
-        <div className="asagi-kaydir-uyari">
-          <p>Beni daha iyi tanımak için aşağı kaydırın</p>
-          <div className="asagi-ok"></div>
+        <div className="resim-alani">
+          <img
+            src={profil}
+            alt="Fahriye Elif Dikci"
+          />
         </div>
-      </section>
-    </>
+
+      </div>
+
+      <div className="asagi-kaydir-uyari">
+        <p>Beni tanımak için aşağı kaydır</p>
+        <div className="asagi-ok"></div>
+      </div>
+    </section>
   );
 }
 
