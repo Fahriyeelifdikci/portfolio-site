@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Menu from "./components/Menu";
+import AnaMenu from "./components/AnaMenu";
+import Hakkimda from "./components/Hakkimda";
+import Yetenekler from "./components/Yetenekler";
+import Projeler from "./components/Projeler";
+import Iletisim from "./components/Iletisim";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Menu />
+      <AnaMenu />
+      <Hakkimda />
+      <Yetenekler />
+      <Projeler />
+      <Iletisim />
     </div>
   );
 }

@@ -1,0 +1,98 @@
+/* ============================= */
+/*        HAKKIMDA ALANI         */
+/* ============================= */
+
+.hakkimda {
+  height: 100vh;
+  width: 100%;
+  padding: 60px 60px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at top, #1a1a1a, #050505);
+}
+
+/* Başlık */
+.hakkimda-baslik {
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hakkimda-baslik::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #ff2e2e;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* Kutular Alanı */
+.hakkimda-kutular {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Tek Kutu */
+.hakkimda-kutu {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 22px 18px;
+
+  text-align: center;
+  color: white;
+
+  border: 1px solid rgba(255, 46, 46, 0.25);
+  box-shadow: 0px 0px 20px rgba(255, 46, 46, 0.08);
+
+  transition: 0.3s ease;
+}
+
+.hakkimda-kutu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 0px 28px rgba(255, 46, 46, 0.25);
+}
+
+/* Animasyon Boyutu Küçük */
+.hakkimda-kutu div {
+  width: 110px !important;
+  margin: 0 auto 10px;
+}
+
+/* Kutu Başlık */
+.hakkimda-kutu h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ff2e2e;
+}
+
+/* Yazı Daha Küçük */
+.hakkimda-kutu p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Responsive: Mobilde alt alta */
+@media (max-width: 900px) {
+  .hakkimda {
+    height: auto;
+    padding: 70px 25px;
+  }
+
+  .hakkimda-kutular {
+    grid-template-columns: 1fr;
+  }
+}

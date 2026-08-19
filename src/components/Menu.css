@@ -1,0 +1,70 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+
+  padding: 25px 0;
+}
+
+/* Menü iç kapsayıcı */
+.menu-icerik {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* linkler tam ortada */
+  align-items: center;
+}
+
+
+/* LOGO */
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-right: 700px; /* logo ile linkleri ayırır */
+}
+
+/* Menü Linkleri */
+.menu-linkler {
+  display: flex;
+  gap: 35px; /* linkler arası boşluk arttı */
+}
+
+/* Linkler */
+.menu-linkler a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Hover efekti */
+.menu-linkler a:hover {
+  color: #ff2e2e;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .menu-icerik {
+    flex-direction: column; /* alt alta diz */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .menu-linkler {
+    gap: 15px;
+    flex-wrap: wrap; /* taşarsa alta geçsin */
+    justify-content: center;
+  }
+
+  .menu-linkler a {
+    font-size: 14px;
+  }
+}
