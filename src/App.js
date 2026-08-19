@@ -8,17 +8,21 @@ import Projeler from "./components/Projeler";
 import Iletisim from "./components/Iletisim";
 import Deneyimler from "./components/Deneyimler";
 
+import { LanguageProvider } from "./i18n/LanguageContext";
+
 function App() {
   return (
-    <div>
-      <Menu />
-      <AnaMenu />
-      <Hakkimda />
-      <Deneyimler />
-      <Yetenekler />
-      <Projeler />
-      <Iletisim />
-    </div>
+    <LanguageProvider>
+      <div className="app">
+        <Menu />
+        <AnaMenu />
+        <Hakkimda />
+        <Deneyimler />
+        <Yetenekler />
+        <Projeler />
+        <Iletisim />
+      </div>
+    </LanguageProvider>
   );
 }
 

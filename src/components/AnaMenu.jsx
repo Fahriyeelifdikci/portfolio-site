@@ -3,36 +3,41 @@ import React from "react";
 import profil from "../img/profil.jpeg";
 import { FaGithub, FaEnvelope } from "react-icons/fa6";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function AnaMenu() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="ana-menu" id="anasayfa">
       <div className="kapsayici-alan">
 
         <div className="yazi-alani">
-        <p className="kucuk-baslik">Merhaba, ben</p>
+          <p className="kucuk-baslik">
+            {t.home.hello}
+          </p>
 
           <h1 className="anim-isim">
             Fahriye Elif Dikci
           </h1>
 
           <h2 className="alt-baslik">
-            Bilgisayar Mühendisliği Öğrencisi
+            {t.home.title}
           </h2>
 
           <p className="aciklama">
-            Backend geliştirme, full-stack geliştirme ve yazılım mühendisliği
-            alanlarıyla ilgileniyorum. Projeleri sıfırdan geliştirmeyi,
-            karşılaştığım problemleri çözmeyi ve gerçek uygulamalar
-            geliştirerek kendimi ilerletmeyi seviyorum.
+            {t.home.description}
           </p>
 
           <div className="hero-butonlar">
             <a href="#projeler" className="ana-buton">
-              Projelerimi Gör
+              {t.home.projectsButton}
             </a>
 
             <a href="#iletisim" className="ikincil-buton">
-              İletişime Geç
+              {t.home.contactButton}
             </a>
           </div>
 
@@ -47,7 +52,9 @@ function AnaMenu() {
             </a>
 
             <a
-              href="mailto:elifdikci52@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=elifdikci52@gmail.com"
+              target="_blank"
+              rel="noreferrer"
               aria-label="Email"
             >
               <FaEnvelope size={28} />
@@ -65,7 +72,7 @@ function AnaMenu() {
       </div>
 
       <div className="asagi-kaydir-uyari">
-        <p>Beni tanımak için aşağı kaydır</p>
+        <p>{t.home.scroll}</p>
         <div className="asagi-ok"></div>
       </div>
     </section>

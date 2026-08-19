@@ -1,87 +1,40 @@
 import React from "react";
 import "./Yetenekler.css";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function Yetenekler() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="yetenekler" id="yetenekler">
-
       <div className="yetenekler-ust">
-        <span className="yetenekler-etiket">TEKNİK YETKİNLİKLER</span>
+        <span className="yetenekler-etiket">
+          {t.skills.label}
+        </span>
 
-        <h2>Yetenekler</h2>
+        <h2>{t.skills.title}</h2>
 
-        <p>
-          Eğitim sürecimde ve geliştirdiğim projelerde kullandığım
-          teknolojiler ile üzerinde çalışmaya devam ettiğim alanlar.
-        </p>
+        <p>{t.skills.intro}</p>
       </div>
 
       <div className="yetenekler-grid">
+        {t.skills.categories.map((kategori, index) => (
+          <div className="yetenek-kategori" key={index}>
+            <h3>{kategori.title}</h3>
 
-        <div className="yetenek-kategori">
-          <h3>Programlama Dilleri</h3>
-
-          <div className="yetenek-listesi">
-            <span>Python</span>
-            <span>C#</span>
-            <span>C++</span>
-            <span>JavaScript</span>
+            <div className="yetenek-listesi">
+              {kategori.items.map((item, itemIndex) => (
+                <span key={itemIndex}>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="yetenek-kategori">
-          <h3>Frontend</h3>
-
-          <div className="yetenek-listesi">
-            <span>React</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-        </div>
-
-        <div className="yetenek-kategori">
-          <h3>Backend & API</h3>
-
-          <div className="yetenek-listesi">
-            <span>Node.js</span>
-            <span>REST API</span>
-          </div>
-        </div>
-
-        <div className="yetenek-kategori">
-          <h3>Veritabanı</h3>
-
-          <div className="yetenek-listesi">
-            <span>MySQL</span>
-            <span>SQL</span>
-          </div>
-        </div>
-
-        <div className="yetenek-kategori">
-          <h3>Araçlar & Teknolojiler</h3>
-
-          <div className="yetenek-listesi">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>VS Code</span>
-            <span>PyCharm</span>
-            <span>WebStorm</span>
-          </div>
-        </div>
-
-        <div className="yetenek-kategori">
-          <h3>Üzerinde Çalıştığım Alanlar</h3>
-
-          <div className="yetenek-listesi">
-            <span>Backend Development</span>
-            <span>Full-Stack Development</span>
-            <span>Testing</span>
-            <span>Software Architecture</span>
-          </div>
-        </div>
-
+        ))}
       </div>
-
     </section>
   );
 }

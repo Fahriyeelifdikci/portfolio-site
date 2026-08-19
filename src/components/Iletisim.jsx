@@ -1,34 +1,40 @@
 import React from "react";
 import "./Iletisim.css";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function Iletisim() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const gmailLink =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=elifdikci52@gmail.com";
+
   return (
     <section className="iletisim" id="iletisim">
-
       <div className="iletisim-ust">
-        <span className="iletisim-etiket">İLETİŞİM</span>
+        <span className="iletisim-etiket">
+          {t.contact.label}
+        </span>
 
-        <h2>Benimle İletişime Geç</h2>
+        <h2>{t.contact.title}</h2>
 
-        <p>
-          Projeler, staj fırsatları, iş birlikleri veya yazılım geliştirme
-          üzerine konuşmak için benimle iletişime geçebilirsiniz.
-        </p>
+        <p>{t.contact.intro}</p>
       </div>
 
       <div className="iletisim-container">
-
         <a
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=elifdikci52@gmail.com"
-           target="_blank"
-           rel="noopener noreferrer"
-           className="iletisim-kart"
+          href={gmailLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="iletisim-kart"
         >
           <span className="iletisim-icon">✉</span>
 
           <div>
-             <h3>E-posta</h3>
-             <p>elifdikci52@gmail.com</p>
+            <h3>{t.contact.email}</h3>
+            <p>elifdikci52@gmail.com</p>
           </div>
         </a>
 
@@ -41,7 +47,7 @@ function Iletisim() {
           <span className="iletisim-icon">&lt;/&gt;</span>
 
           <div>
-            <h3>GitHub</h3>
+            <h3>{t.contact.github}</h3>
             <p>Fahriyeelifdikci</p>
           </div>
         </a>
@@ -55,7 +61,7 @@ function Iletisim() {
           <span className="iletisim-icon">in</span>
 
           <div>
-            <h3>LinkedIn</h3>
+            <h3>{t.contact.linkedin}</h3>
             <p>Fahriye Elif Dikci</p>
           </div>
         </a>
@@ -64,27 +70,25 @@ function Iletisim() {
           <span className="iletisim-icon">⌖</span>
 
           <div>
-            <h3>Konum</h3>
-            <p>Balıkesir, Türkiye</p>
+            <h3>{t.contact.location}</h3>
+            <p>{t.contact.locationValue}</p>
           </div>
         </div>
-
       </div>
 
       <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=elifdikci52@gmail.com"
+        href={gmailLink}
         target="_blank"
         rel="noopener noreferrer"
         className="iletisim-buton"
       >
-        E-posta Gönder
+        {t.contact.emailButton}
         <span>↗</span>
       </a>
 
       <p className="iletisim-alt">
-        Yeni projeler ve iş birlikleri için iletişime açığım.
+        {t.contact.footer}
       </p>
-
     </section>
   );
 }

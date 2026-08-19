@@ -1,46 +1,47 @@
 import React from "react";
 import "./Projeler.css";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function Projeler() {
-  const projeler = [
-    {
-      baslik: "Log Analyzer CLI",
-      aciklama:
-        "Log dosyalarını analiz ederek INFO, WARNING ve ERROR seviyelerindeki kayıtları sayan ve istenilen log seviyesine göre filtreleme yapabilen komut satırı uygulaması.",
-      teknolojiler: ["Python", "CLI", "argparse", "unittest"],
-      github: "https://github.com/Fahriyeelifdikci/log-analyzer-cli",
-    },
-  ];
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <section className="projeler" id="projeler">
       <div className="projeler-ust">
-        <span className="projeler-etiket">ÇALIŞMALARIM</span>
+        <span className="projeler-etiket">
+          {t.projects.label}
+        </span>
 
-        <h2>Projeler</h2>
+        <h2>{t.projects.title}</h2>
 
-        <p>
-          Öğrendiğim teknolojileri pratiğe dönüştürmek ve yazılım geliştirme
-          becerilerimi ilerletmek amacıyla geliştirdiğim projeler.
-        </p>
+        <p>{t.projects.intro}</p>
       </div>
 
       <div className="projeler-grid">
-        {projeler.map((proje, index) => (
+        {t.projects.items.map((proje, index) => (
           <article className="proje-kart" key={index}>
             <div className="proje-kart-ust">
-              <span className="proje-numara">0{index + 1}</span>
+              <span className="proje-numara">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-              <span className="proje-durum">Tamamlandı</span>
+              <span className="proje-durum">
+                {t.projects.completed}
+              </span>
             </div>
 
-            <h3>{proje.baslik}</h3>
+            <h3>{proje.title}</h3>
 
-            <p>{proje.aciklama}</p>
+            <p>{proje.description}</p>
 
             <div className="proje-teknolojiler">
-              {proje.teknolojiler.map((teknoloji, teknolojiIndex) => (
-                <span key={teknolojiIndex}>{teknoloji}</span>
+              {proje.technologies.map((teknoloji, teknolojiIndex) => (
+                <span key={teknolojiIndex}>
+                  {teknoloji}
+                </span>
               ))}
             </div>
 
@@ -50,7 +51,7 @@ function Projeler() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub'da Görüntüle
+                {t.projects.githubButton}
                 <span>↗</span>
               </a>
             </div>

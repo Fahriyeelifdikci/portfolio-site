@@ -1,63 +1,11 @@
-body {
+.app {
+  width: 100%;
+  min-height: 100vh;
+
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: white;
-}
+  padding: 0;
 
-.menu {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 60px;
-  background: #1c1c1c;
-  position: sticky;
-  top: 0;
-}
+  background: #080808;
 
-.menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu a:hover {
-  color: #00ffaa;
-}
-
-.ana {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.ana button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  background: #00ffaa;
-  cursor: pointer;
-}
-
-.bolum {
-  padding: 80px 60px;
-}
-
-.kartlar span {
-  display: inline-block;
-  background: #222;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-.proje {
-  background: #1c1c1c;
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 12px;
+  overflow-x: hidden;
 }

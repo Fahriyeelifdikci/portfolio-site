@@ -1,69 +1,47 @@
 import React from "react";
 import "./Deneyimler.css";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function Deneyimler() {
-  const deneyimler = [
-    {
-      tur: "Staj",
-      kurum: "Uyumsoft",
-      pozisyon: "Software Developer Intern",
-      aciklama:
-        "Yazılım geliştirme süreçlerini gerçek bir çalışma ortamında gözlemleme ve uygulama fırsatı buldum. Ekip çalışması, proje geliştirme süreci ve yazılım teknolojileri konusunda deneyim kazandım.",
-    },
-    {
-      tur: "Staj",
-      kurum: "TNC Group",
-      pozisyon: "Bilgi Teknolojileri Stajyeri",
-      aciklama:
-        "Bilgi teknolojileri alanında uygulamalı çalışmalar gerçekleştirerek Python ve çeşitli dijital araçlar üzerinde çalışma fırsatı buldum.",
-    },
-    {
-      tur: "Topluluk",
-      kurum: "IEEE Balıkesir Üniversitesi Öğrenci Kolu",
-      pozisyon: "WIE Başkan Yardımcısı",
-      aciklama:
-        "Topluluk yönetimi, ekip koordinasyonu ve etkinlik planlama süreçlerinde aktif görev aldım. Organizasyonların hazırlanması ve yürütülmesinde ekip arkadaşlarımla birlikte çalıştım.",
-    },
-    {
-      tur: "Organizasyon",
-      kurum: "Kadın İş Derse",
-      pozisyon: "Eş Koordinatör",
-      aciklama:
-        "IEEE Balıkesir Üniversitesi kapsamında düzenlenen etkinliğin planlama, koordinasyon ve organizasyon süreçlerinde görev aldım.",
-    },
-    {
-      tur: "Girişimcilik",
-      kurum: "BaunTECH Start",
-      pozisyon: "Girişimcilik Kampı Katılımcısı",
-      aciklama:
-        "Proje ekibiyle birlikte girişimcilik kampına katılarak fikir geliştirme, ekip çalışması ve proje sunumu süreçlerinde deneyim kazandım.",
-    },
-  ];
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <section className="deneyimler" id="deneyimler">
       <div className="deneyimler-ust">
-        <span className="deneyimler-etiket">DENEYİM & TOPLULUK</span>
+        <span className="deneyimler-etiket">
+          {t.experience.label}
+        </span>
 
-        <h2>Deneyimlerim</h2>
+        <h2>
+          {t.experience.title}
+        </h2>
 
         <p>
-          Stajlarım, öğrenci topluluklarında üstlendiğim görevler ve katıldığım
-          çalışmalar sayesinde hem teknik hem de ekip çalışması ve organizasyon
-          becerilerimi geliştirmeye devam ediyorum.
+          {t.experience.intro}
         </p>
       </div>
 
       <div className="deneyimler-grid">
-        {deneyimler.map((deneyim, index) => (
+        {t.experience.items.map((deneyim, index) => (
           <article className="deneyim-kart" key={index}>
-            <span className="deneyim-tur">{deneyim.tur}</span>
+            <span className="deneyim-tur">
+              {deneyim.type}
+            </span>
 
-            <h3>{deneyim.kurum}</h3>
+            <h3>
+              {deneyim.company}
+            </h3>
 
-            <h4>{deneyim.pozisyon}</h4>
+            <h4>
+              {deneyim.position}
+            </h4>
 
-            <p>{deneyim.aciklama}</p>
+            <p>
+              {deneyim.description}
+            </p>
           </article>
         ))}
       </div>

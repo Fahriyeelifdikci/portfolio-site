@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./Menu.css";
 
+import { useLanguage } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
+
 function Menu() {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+
   const [menuAcik, setMenuAcik] = useState(false);
 
   const menuKapat = () => {
@@ -30,28 +36,38 @@ function Menu() {
 
         <div className={`menu-linkler ${menuAcik ? "aktif" : ""}`}>
           <a href="#anasayfa" onClick={menuKapat}>
-            Ana Sayfa
+            {t.menu.home}
           </a>
 
           <a href="#hakkimda" onClick={menuKapat}>
-            Hakkımda
+            {t.menu.about}
           </a>
 
           <a href="#deneyimler" onClick={menuKapat}>
-            Deneyimler
+            {t.menu.experience}
           </a>
 
           <a href="#yetenekler" onClick={menuKapat}>
-            Yetenekler
+            {t.menu.skills}
           </a>
 
           <a href="#projeler" onClick={menuKapat}>
-            Projeler
+            {t.menu.projects}
           </a>
 
           <a href="#iletisim" onClick={menuKapat}>
-            İletişim
+            {t.menu.contact}
           </a>
+
+          <button
+            className="dil-buton"
+            onClick={() => {
+              toggleLanguage();
+              menuKapat();
+            }}
+          >
+            {language === "tr" ? "EN" : "TR"}
+          </button>
         </div>
 
       </div>
